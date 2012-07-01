@@ -40,7 +40,7 @@ PhysicalMemoryMap::PhysicalMemoryMap()
 PhysicalMemoryMap::~PhysicalMemoryMap()
 {
     clear();
-    mAllocator = 0;
+    mAllocator = NULL;
 }
 
 
@@ -89,8 +89,8 @@ void PhysicalMemoryMap::clear(void)
         mAllocator->free(mCurrent, sizeof(*mCurrent));
         mCount--;
     }
-    mList = 0;
-    mCurrent = 0;
+    mList = NULL;
+    mCurrent = NULL;
     /* Check there's no memory leak */
     assert(mCount == 0);
 }
